@@ -3,5 +3,10 @@ describe("Thermostat", function(){
     var thermostat = new Thermostat();
     expect(thermostat.temp).toEqual(20);
   });
+  it("can have its temperature increased", function(){
+      var thermostat = new Thermostat();
+      thermostat.increase(1);
+      expect(thermostat.temp).toEqual(21);
+  });
 
 });
