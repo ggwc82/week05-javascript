@@ -6,3 +6,6 @@ function Thermostat() {
 Thermostat.prototype.increase = function(number) {
 	this.temp += number;
 }
+Thermostat.prototype.decrease = function(number) {
+	this.temp -= number;
+}
