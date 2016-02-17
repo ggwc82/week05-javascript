@@ -1,0 +1,4 @@
+Objects : User <------> Thermostat <---- Temperature
+Messages:     display(colour)/set(up/down)         measurement
+                        Power saving on/off
+                        reset
