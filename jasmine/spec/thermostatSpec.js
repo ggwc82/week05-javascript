@@ -22,6 +22,6 @@ describe("Thermostat", function(){
   });
   it("has a minimum temperature of 10", function(){
     spyOn(thermostat, 'temp').and.returnValue(10)
-    expect(function(){thermostat.decrease(1)}).toThrowError("Below minimum temperature!")
+    expect(function(){thermostat.decrease(1)}).toThrow("Below minimum temperature!")
   });
 });
