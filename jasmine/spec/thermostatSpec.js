@@ -21,7 +21,9 @@ describe("Thermostat", function(){
   	expect(thermostat.temp).toEqual(19);
   });
   it("has a minimum temperature of 10", function(){
-    spyOn(thermostat, 'temp').and.returnValue(10)
+    for (var i = 1; i < 11; i++) {
+    	thermostat.decrease(1);
+    } 
     expect(function(){thermostat.decrease(1)}).toThrow("Below minimum temperature!")
   });
 });
