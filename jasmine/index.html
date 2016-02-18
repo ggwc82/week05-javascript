@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
     <title>Thermostat</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="src/thermostat.js"></script>
 
@@ -29,7 +30,41 @@
  
   </body>
   <script>
+$(document).ready(function(){
+
 var thermostat = new Thermostat();
-  </script>
+$("#reset").click(function(){
+  thermostat.reset();
+  refresh();
+});
+
+$("#powerSavingOn").click(function(){
+  thermostat.powerSavingOn();
+  refresh();
+});
+
+$("#powerSavingOff").click(function(){
+  thermostat.powerSavingOff();
+  refresh();
+});
+
+$("#decreaseTemp").click(function(){
+  thermostat.decrease(1);
+  refresh();
+});
+
+$("#increaseTemp").click(function(){
+  thermostat.increase(1);
+  refresh();
+});
+
+var refresh = function() { $("div.display").html("<p class="+
+    thermostat.display() + ">" + thermostat.temp +
+    "</p>");};
+  
+refresh();
+  
+});
+ </script>
 
 </html>
