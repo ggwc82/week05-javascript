@@ -30,4 +30,8 @@ describe("Thermostat", function(){
   	thermostat.powerSavingOn();
   	expect(function(){thermostat.increase(6)}).toThrow("Maximum temperature is 25");
   });
+  it("Power saving mode OFF sets maximum temperature of 32", function(){
+  	thermostat.powerSavingOff();
+  	expect(function(){thermostat.increase(13)}).toThrow("Maximum temperature is 32");
+  })
 });

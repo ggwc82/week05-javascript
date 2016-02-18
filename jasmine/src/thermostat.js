@@ -16,3 +16,7 @@ Thermostat.prototype.decrease = function(number) {
 Thermostat.prototype.powerSavingOn = function() {
 	this.maximum = 25;
 }
+
+Thermostat.prototype.powerSavingOff = function() {
+	this.maximum = 32;
+}
