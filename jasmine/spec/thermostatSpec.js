@@ -26,4 +26,8 @@ describe("Thermostat", function(){
     } 
     expect(function(){thermostat.decrease(1)}).toThrow("Below minimum temperature!")
   });
+  it("Power saving mode ON sets new maximum temperature of 25", function(){
+  	thermostat.powerSavingOn();
+  	expect(function(){thermostat.increase(6)}).toThrow("Maximum temperature is 25");
+  });
 });
