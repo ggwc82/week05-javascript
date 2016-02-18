@@ -1,4 +1,5 @@
-DEFAULTTEMP = 20
+var DEFAULTTEMP = 20
+
 function Thermostat() {
 	this.temp = DEFAULTTEMP
 	this.maximum = 25
@@ -19,4 +20,8 @@ Thermostat.prototype.powerSavingOn = function() {
 
 Thermostat.prototype.powerSavingOff = function() {
 	this.maximum = 32;
+}
+
+Thermostat.prototype.reset = function() {
+	this.temp = DEFAULTTEMP;
 }
