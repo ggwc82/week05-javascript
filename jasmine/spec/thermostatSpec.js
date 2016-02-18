@@ -38,4 +38,16 @@ describe("Thermostat", function(){
   	thermostat.reset();
   	expect(thermostat.temp).toEqual(20);
   });
+  it("Displays energy usage - Green", function(){
+  	thermostat.decrease(5);
+  	expect(thermostat.display()).toEqual("green");
+  });
+  it("Displays energy usage - Yellow", function(){
+  	expect(thermostat.display()).toEqual("yellow");
+  });
+  it("Displays energy usage - Red", function(){
+  	thermostat.powerSavingOff();
+  	thermostat.increase(6);
+  	expect(thermostat.display()).toEqual("red");
+  });
 });

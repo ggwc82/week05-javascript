@@ -7,7 +7,7 @@ function Thermostat() {
 
 Thermostat.prototype.increase = function(number) {
 	if (this.temp + number > this.maximum) { throw "Maximum temperature is " + this.maximum }
-	this.temp += number;
+		this.temp += number;
 }
 Thermostat.prototype.decrease = function(number) {
 	if (this.temp - number < 10) { throw "Below minimum temperature!"; };
@@ -24,4 +24,14 @@ Thermostat.prototype.powerSavingOff = function() {
 
 Thermostat.prototype.reset = function() {
 	this.temp = DEFAULTTEMP;
+}
+
+Thermostat.prototype.display = function() {
+	if (this.temp < 18) { 
+		return "green"; 
+	} else if (this.temp <= 25) {
+		return "yellow";
+	} else {
+		return "red";
+	}	
 }
