@@ -23,6 +23,7 @@ Thermostat.prototype.powerSavingOff = function() {
 }
 
 Thermostat.prototype.reset = function() {
+  console.log("Called the reset method")
 	this.temp = DEFAULTTEMP;
 }
 
