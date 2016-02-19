@@ -12,8 +12,8 @@ $(document).ready(function(){
     var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
     var units = '&units=metric';
     $.get(url + token + units, function(data) {
-     console.log(data.main.temp); 
-      $('#current-temperature').text(data.main.temp);
+     var temps = Math.round(data.main.temp); 
+      $('#current-temperature').text(temps + ' deg Celcius');
     })
   }
 
@@ -43,8 +43,7 @@ $(document).ready(function(){
 
   displayWeather('London');
 
-  $('#select-city').submit(function(event) {
-    event.preventDefault();
+  $('#current-city').change(function() {
     var city = $('#current-city').val();
     displayWeather(city);
   });
